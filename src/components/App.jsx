@@ -11,7 +11,6 @@ export default class App extends React.Component {
 		};
 	}
 	render() {
-
 		const getName = (e) => {
 			const value = e.target.value;
 			this.setState({ name: value });
@@ -22,18 +21,17 @@ export default class App extends React.Component {
 		};
 
 		const addUser = () => {
-
 			const getMax = () => {
 				const idies = [];
-				if(this.state.users.length > 0) {
-					for(let i = 0; i < this.state.users.length; i++) {
+				if (this.state.users.length > 0) {
+					for (let i = 0; i < this.state.users.length; i++) {
 						const elem = this.state.users[i];
 						idies.push(elem.id);
 					}
 					return Math.max(...idies);
 				}
 				return 0;
-			}
+			};
 
 			const user = { id: getMax() + 1, name: this.state.name, status: this.state.status };
 
